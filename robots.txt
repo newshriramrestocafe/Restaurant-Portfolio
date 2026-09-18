@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newshriramrestocafe.github.io/Restaurant-Portfolio/sitemap.xml
