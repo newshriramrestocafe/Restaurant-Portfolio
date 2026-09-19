@@ -1,0 +1,13 @@
+_menu_ocr/
+_poster_previews/
+source-files/
+# Common OS/editor files
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+
+# Logs
+*.log
