@@ -2,6 +2,7 @@ const pages = [...document.querySelectorAll('.menu-page')];
 const previous = document.querySelector('#prevPage');
 const next = document.querySelector('#nextPage');
 const counter = document.querySelector('#pageCounter');
+const totalCounter = document.querySelector('#pageTotal');
 let currentPage = 0;
 
 function updateBook() {
@@ -9,9 +10,12 @@ function updateBook() {
     page.classList.toggle('flipped', index < currentPage);
     page.style.zIndex = index === currentPage ? String(pages.length + 1) : index < currentPage ? String(index + 1) : String(pages.length - index);
   });
-  counter.textContent = String(Math.min(currentPage + 1, pages.length));
+
+  const totalPages = pages.length;
+  counter.textContent = String(Math.min(currentPage + 1, totalPages));
+  if (totalCounter) totalCounter.textContent = String(totalPages);
   previous.disabled = currentPage === 0;
-  next.disabled = currentPage === pages.length - 1;
+  next.disabled = currentPage === totalPages - 1;
 }
 
 next.addEventListener('click', () => {
